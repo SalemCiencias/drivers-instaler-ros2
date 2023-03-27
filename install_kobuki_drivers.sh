@@ -1,9 +1,10 @@
 #!/bin/bash
 SRC_DIRECTORY=kobuki_base_ws/src
-WORK_DIRECTORY=$(pwd)/$SRC_DIRECTORY
-
 ROS_DISTRO=humble
+
+#Variables no modificables
 ROS_SOURCE=/opt/ros/$ROS_DISTRO/setup.bash
+WORK_DIRECTORY=$(pwd)/$SRC_DIRECTORY
 
 echo "Iniciando instalación de los drivers de la kobuki con ros2"
 
@@ -60,3 +61,7 @@ source $ROS_SOURCE
 rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 echo "compilando codigo"
 colcon build
+
+echo '**************'
+echo 'Ejecuta: source '$(pwd)'/install/setup.bash  para tener disponbible los drivers'
+echo 'ros2 launch kobuki_node kobuki_node-composed-launch.py : para lanzar el nodo controlador'
