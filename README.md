@@ -3,7 +3,7 @@ Bash script para instalar los drivers de la kobuli en ros2
 
 ## Requerimientos
 
-- Distribucion de ros2 (testeado con Humble)
+- Distribucion de ros2 (probado con Humble)
 - python3-rosdep2
 
 ```bash
